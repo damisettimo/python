@@ -6,11 +6,11 @@ app_name='app_coder'
 urlpatterns = [
     path('', views.index, name='Home'),
     path('profesors', views.profesors, name='Profesors'),
-    # path('courses', views.courses, name='course-list'),
+    path('categorias', views.categorias, name='categoria-list'),
     path('students', views.students, name='Students'),
     path('homeworks', views.homeworks, name='Homeworks'),
     path('formHTML', views.form_hmtl),
-    path('course-django-forms', views.course_forms_django, name='CourseDjangoForms'),
+    path('categoria-django-forms', views.categoria_forms_django, name='CategoriaDjangoForms'),
     path('profesor-django-forms', views.profesor_forms_django, name='ProfesorDjangoForms'),
     path('profesor/<int:pk>/update', views.update_profesor, name='UpdateProfesor'),
     path('profesor/<int:pk>/delete', views.delete_profesor, name='DeleteProfesor'),
@@ -18,11 +18,11 @@ urlpatterns = [
     path('search', views.search, name='Search'),
 
 
-    # Dajngo documentation -->  https://docs.djangoproject.com/en/4.0/topics/class-based-views/generic-editing/
-    # Confirmo la url de la documentación es correcta, deben hacer scroll hasta esta parte:
+    Dajngo documentation -->  https://docs.djangoproject.com/en/4.0/topics/class-based-views/generic-editing/
+    Confirmo la url de la documentación es correcta, deben hacer scroll hasta esta parte:
     #
-    # from django.urls import path
-    # from myapp.views import AuthorCreateView, AuthorDeleteView, AuthorUpdateView
+    from django.urls import path
+    from myapp.views import AuthorCreateView, AuthorDeleteView, AuthorUpdateView
 
     # urlpatterns = [
     #     # ...
@@ -33,9 +33,9 @@ urlpatterns = [
     #
     # Acá se ve la forma clara cómo Django realiza de forma stándar los nombres para urls, views y name del path.
 
-    path('courses', views.CourseListView.as_view(), name='course-list'),
-    path('course/add/', views.CourseCreateView.as_view(), name='course-add'),
-    path('course/<int:pk>/detail', views.CourseDetailView.as_view(), name='course-detail'),
-    path('course/<int:pk>/update', views.CourseUpdateView.as_view(), name='course-update'),
-    path('course/<int:pk>/delete', views.CourseDeleteView.as_view(), name='course-delete'),
+    path('categorias', views.CategoriaListView.as_view(), name='categoria-list'),
+    path('categoria/add/', views.CategoriaCreateView.as_view(), name='categoria-add'),
+    path('categoria/<int:pk>/detail', views.CategoriaDetailView.as_view(), name='categoria-detail'),
+    path('categoria/<int:pk>/update', views.CategoriaUpdateView.as_view(), name='categoria-update'),
+    path('categoria/<int:pk>/delete', views.CategoriaDeleteView.as_view(), name='categoria-delete'),
 ]
