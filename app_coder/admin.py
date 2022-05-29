@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from app_coder.models import Course, Student, Profesor, Homework
+from app_coder.models import Categoria, Student, Profesor, Homework
 
-admin.site.register(Course)
+admin.site.register(Categoria)
 
 admin.site.register(Student)
 
