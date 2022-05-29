@@ -1,12 +1,12 @@
 from django.db import models
 
 
-class Course(models.Model):
+class Categoria(models.Model):
     name = models.CharField(max_length=40)
     code = models.IntegerField()
 
     def __str__(self):
-        return f'{self.name} course --'
+        return f'{self.name} categoria --'
 
 
 class Student(models.Model):
