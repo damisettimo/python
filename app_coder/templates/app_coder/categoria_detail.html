@@ -2,9 +2,9 @@
 {% load static %}
 {% block app_coder_content %}
 
-<h2>Detalle del Curso</h2>
+<h2>Detalle de Categoria</h2>
 <hr></hr>
-<p><h3>Curso: {{ course.name }}</h3></p>
-<p><h4>Camada: {{ course.code }}</h4></p>
-<p><a class="btn2 btn-primary" href="{% url 'app_coder:course-list' %}">Regresar a la lista de cursos</a></p>
+<p><h3>categoria: {{ categoria.name }}</h3></p>
+<p><h4>año: {{ categoria.code }}</h4></p>
+<p><a class="btn2 btn-primary" href="{% url 'app_coder:categoria-list' %}">Regresar a la lista de categorias</a></p>
 {% endblock %}
