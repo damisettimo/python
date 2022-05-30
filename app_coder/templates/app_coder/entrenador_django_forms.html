@@ -2,15 +2,15 @@
 {% load static %}
 {% block app_coder_content %}
 
-<h2>Formulario para edición del profesor {{profesor.name}} </h2>
+<h2>Formulario para insersión de un nuevo entrenador</h2>
 <hr></hr>
 
 <form action="" method="POST">
     {% csrf_token %}
 
-    {{ profesor_form.as_p }}
+    {{ entrenador_form.as_p }}
 
-    <input type="submit" class="btn btn-primary" value="Guardar profesor" />
+    <input type="submit" class="btn btn-primary" value="Crear entrenador" />
 
 </form>
 

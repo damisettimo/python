@@ -2,25 +2,30 @@ from django.shortcuts import render
 from django.db.models import Q
 from django.forms.models import model_to_dict
 
+<<<<<<< HEAD
 from app_coder.models import Categoria, Student, Profesor, Homework
 from app_coder.forms import CategoriaForm, ProfesorForm, HomeworkForm
+=======
+from app_coder.models import Course, Entrenador, Student, Homework
+from app_coder.forms import CourseForm, EntrenadorForm, HomeworkForm
+>>>>>>> pr/2
 
 
 def index(request):
     return render(request, "app_coder/home.html")
 
 
-def profesors(request):
-    profesors = Profesor.objects.all()
+def entrenadores(request):
+    entrenadores = Entrenador.objects.all()
 
     context_dict = {
-        'profesors': profesors
+        'entrenadores': entrenadores,
     }
 
     return render(
         request=request,
         context=context_dict,
-        template_name="app_coder/profesors.html"
+        template_name="app_coder/entrenadores.html"
     )
 
 
@@ -118,96 +123,96 @@ def categoria_forms_django(request):
     )
 
 
-def profesor_forms_django(request):
+def entrenador_forms_django(request):
     if request.method == 'POST':
-        profesor_form = ProfesorForm(request.POST)
-        if profesor_form.is_valid():
-            data = profesor_form.cleaned_data
-            profesor = Profesor(
+        entrenador_form = EntrenadorForm(request.POST)
+        if entrenador_form.is_valid():
+            data = entrenador_form.cleaned_data
+            entrenadores = Entrenador(
                 name=data['name'],
                 last_name=data['last_name'],
                 email=data['email'],
                 profession=data['profession'],
             )
-            profesor.save()
+            entrenadores.save()
 
-            profesors = Profesor.objects.all()
+            entrenadores = Entrenador.objects.all()
             context_dict = {
-                'profesors': profesors
+                'entrenadores': entrenadores,
             }
             return render(
                 request=request,
                 context=context_dict,
-                template_name="app_coder/profesors.html"
+                template_name="app_coder/entrenadores.html"
             )
 
-    profesor_form = ProfesorForm(request.POST)
+    entrenador_form = EntrenadorForm(request.POST)
     context_dict = {
-        'profesor_form': profesor_form
+        'entrenador_form': entrenador_form
     }
     return render(
         request=request,
         context=context_dict,
-        template_name='app_coder/profesor_django_forms.html'
+        template_name='app_coder/entrenador_django_forms.html'
     )
 
-def update_profesor(request, pk: int):
-    profesor = Profesor.objects.get(pk=pk)
+def update_entrenador(request, pk: int):
+    entrenador = Entrenador.objects.get(pk=pk)
 
     if request.method == 'POST':
-        profesor_form = ProfesorForm(request.POST)
-        if profesor_form.is_valid():
-            data = profesor_form.cleaned_data
-            profesor.name = data['name']
-            profesor.last_name = data['last_name']
-            profesor.email = data['email']
-            profesor.profession = data['profession']
-            profesor.save()
+        entrenador_form = EntrenadorForm(request.POST)
+        if entrenador_form.is_valid():
+            data = entrenador_form.cleaned_data
+            entrenador.name = data['name']
+            entrenador.last_name = data['last_name']
+            entrenador.email = data['email']
+            entrenador.profession = data['profession']
+            entrenador.save()
 
-            profesors = Profesor.objects.all()
+            entrenador = Entrenador.objects.all()
             context_dict = {
-                'profesors': profesors
+                'entrenador': entrenador,
             }
             return render(
                 request=request,
                 context=context_dict,
-                template_name="app_coder/profesors.html"
+                template_name="app_coder/entrenadores.html"
             )
 
-    profesor_form = ProfesorForm(model_to_dict(profesor))
+    entrenador_form = EntrenadorForm(model_to_dict(entrenador))
     context_dict = {
-        'profesor': profesor,
-        'profesor_form': profesor_form,
+        'entrenador': entrenador,
+        'entrenador_form': entrenador_form,
     }
     return render(
         request=request,
         context=context_dict,
-        template_name='app_coder/profesor_form.html'
+        template_name='app_coder/entrenador_form.html'
     )
 
 
-def delete_profesor(request, pk: int):
-    profesor = Profesor.objects.get(pk=pk)
+def delete_entrenador(request, pk: int):
+    entrenador = Entrenador.objects.get(pk=pk)
     if request.method == 'POST':
-        profesor.delete()
+        entrenador.delete()
 
-        profesors = Profesor.objects.all()
+        entrenador = Entrenador.objects.all()
         context_dict = {
-            'profesors': profesors
+            'entrenador': entrenador,
         }
         return render(
             request=request,
             context=context_dict,
-            template_name="app_coder/profesors.html"
+            template_name="app_coder/entrenador.html"
         )
 
     context_dict = {
-        'profesor': profesor,
+        'entrenador': entrenador,
     }
     return render(
         request=request,
         context=context_dict,
-        template_name='app_coder/profesor_confirm_delete.html'
+        template_name='app_coder/entrenador_confirm_delete.html'
     )
 
 
