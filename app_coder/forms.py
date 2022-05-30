@@ -8,7 +8,7 @@ class CategoriaeForm(forms.Form):
     name = forms.CharField(max_length=40, min_length=3, label='Nombre')
     code = forms.IntegerField(label='Camada')
 
-
+#d
 class ProfesorForm(forms.Form):
     name = forms.CharField(max_length=40, min_length=3, label='Nombre')
     last_name = forms.CharField(max_length=40, label='Apellido')
