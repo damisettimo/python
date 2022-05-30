@@ -3,7 +3,7 @@ from django.db.models import Q
 from django.forms.models import model_to_dict
 
 
-from app_coder.models import Categoria, Student, Entrenador, Homework
+from app_coder.models import Categoria, Jugador, Entrenador, Homework
 from app_coder.forms import CategoriaForm, EntrenadorForm, HomeworkForm
 
 
@@ -40,17 +40,17 @@ def categoriass(request):
     )
 
 
-def students(request):
-    students = Student.objects.all()
+def jugadores(request):
+    jugadores = Jugador.objects.all()
 
     context_dict = {
-        'students': students
+        'jugadores': jugadores
     }
 
     return render(
         request=request,
         context=context_dict,
-        template_name="app_coder/students.html"
+        template_name="app_coder/jugadores.html"
     )
 
 
