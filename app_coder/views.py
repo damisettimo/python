@@ -2,13 +2,10 @@ from django.shortcuts import render
 from django.db.models import Q
 from django.forms.models import model_to_dict
 
-<<<<<<< HEAD
-from app_coder.models import Categoria, Student, Profesor, Homework
-from app_coder.forms import CategoriaForm, ProfesorForm, HomeworkForm
-=======
-from app_coder.models import Course, Entrenador, Student, Homework
-from app_coder.forms import CourseForm, EntrenadorForm, HomeworkForm
->>>>>>> pr/2
+
+from app_coder.models import Categoria, Student, Entrenador, Homework
+from app_coder.forms import CategoriaForm, EntrenadorForm, HomeworkForm
+
 
 
 def index(request):
