@@ -1,0 +1,26 @@
+{% extends "app_coder/index.html" %}
+{% load static %}
+{% block app_coder_content %}
+
+<h2>Lista de Entrenadores</h2>
+<a class="card_custom" href="{% url 'app_coder:EntrenadorDjangoForms' %}">Crear nuevo Entrenador</a>
+<hr>
+</hr>
+<ul>
+    {% for entrenador in entrenadores %}
+    <li>
+        {{entrenador}}
+        (
+        <a href="{% url 'app_coder:UpdateEntrenador' entrenador.id %}">
+            <i class="fa fa-pencil" style="color: rgb(0, 0, 190);"></i>
+        </a>
+        |
+        <a href="{% url 'app_coder:DeleteEntrenador' entrenador.id %}">
+            <i class="fa fa-trash" style="color: rgb(0, 0, 100);"></i>
+        </a>
+        )
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
