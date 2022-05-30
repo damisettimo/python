@@ -1,7 +1,6 @@
 import datetime
 from django import forms
-from django.forms import ModelForm
-from app_coder.models import Profesor
+# from django.forms import ModelForm
 
 
 class CourseForm(forms.Form):
@@ -9,7 +8,7 @@ class CourseForm(forms.Form):
     code = forms.IntegerField(label='Camada')
 
 
-class ProfesorForm(forms.Form):
+class EntrenadorForm(forms.Form):
     name = forms.CharField(max_length=40, min_length=3, label='Nombre')
     last_name = forms.CharField(max_length=40, label='Apellido')
     email = forms.EmailField(label='Correo electrónico')
