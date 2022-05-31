@@ -9,7 +9,7 @@ class Categoria(models.Model):
         return f'{self.name} categoria --'
 
 
-class Student(models.Model):
+class Jugador(models.Model):
     name = models.CharField(max_length=40)
     last_name = models.CharField(max_length=40)
     email = models.EmailField()
