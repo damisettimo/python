@@ -6,11 +6,11 @@ app_name='app_coder'
 urlpatterns = [
     path('', views.index, name='Home'),
     path('entrenadores', views.entrenadores, name='Entrenadores'),
-    path('categorias', views.categoriass, name='categoria-list'),
+    path('categorias', views.categorias, name='categoria-list'),
     path('jugadores', views.jugadores, name='Jugadores'),
     path('homeworks', views.homeworks, name='Homeworks'),
     path('formHTML', views.form_hmtl),
-    path('course-django-forms', views.categoria_forms_django, name='CourseDjangoForms'),
+    path('categoria-django-forms', views.categoria_forms_django, name='CourseDjangoForms'),
     path('entrenador-django-forms', views.entrenador_forms_django, name='EntrenadorDjangoForms'),
     path('entrenador/<int:pk>/update', views.update_entrenador, name='UpdateEntrenador'),
     path('entrenador/<int:pk>/delete', views.delete_entrenador, name='DeleteEntrenador'),

@@ -26,7 +26,7 @@ def entrenadores(request):
     )
 
 
-def categoriass(request):
+def categorias(request):
     categorias = Categoria.objects.all()
 
     context_dict = {

@@ -15,7 +15,7 @@ class Jugador(models.Model):
     email = models.EmailField()
 
     def __str__(self):
-        return f'Nombre del Estudiante: {self.name} {self.last_name} -- e-mail: {self.email}'
+        return f'Nombre del Jugador: {self.name} {self.last_name} -- e-mail: {self.email}'
 
 
 class Entrenador(models.Model):
